@@ -21,5 +21,14 @@ void main() {
       final result = ws.store(input);
       expect(result.store.keys, hasLength(2));
     });
+
+    test('saveStore throws UnimplementedError', () {
+      final ws = Wordstore();
+      const input = 'hello douglas';
+      expect(
+        () => ws.saveStore('password'),
+        throwsA(isA<UnimplementedError>()),
+      );
+    });
   });
 }
