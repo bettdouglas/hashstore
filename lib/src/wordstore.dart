@@ -1,5 +1,3 @@
-import 'package:uuid/uuid.dart';
-
 /// {@template wordstore}
 /// A Very Good Project created by Very Good CLI.
 /// {@endtemplate}
@@ -28,7 +26,6 @@ class Wordstore {
   Future<String> saveStore(String password) async {
     throw UnimplementedError();
   }
-  
 }
 
 class HashResult {
