@@ -24,11 +24,26 @@ void main() {
 
     test('saveStore throws UnimplementedError', () {
       final ws = Wordstore();
-      const input = 'hello douglas';
       expect(
         () => ws.saveStore('password'),
         throwsA(isA<UnimplementedError>()),
       );
+    });
+  });
+
+  group('HashResult', () {
+    test('can be instantiated', () {
+      expect(HashResult(store: {}, hash: []), isNotNull);
+    });
+
+    test('picks properties', () {
+      final hs = HashResult(store: {}, hash: []);
+      expect(hs.hash, isEmpty);
+      expect(hs.store, isEmpty);
+
+      final hs2 = HashResult(store: {1: 'hello'}, hash: [1]);
+      expect(hs2.hash, equals([1]));
+      expect(hs2.store, equals({1: 'hello'}));
     });
   });
 }
